@@ -132,8 +132,8 @@ int main(int argc, char **argv)
     const Colour black(0, 0, 0);
     const Colour red(255, 0, 0);
 
-    const Sphere sphere(Vec3f(screen->w * 0.5, screen->h * 0.5, 50), 50);
-    const Sphere light(Vec3f(0, 0, 50), 1);
+    const sphere sph(Vec3f(screen->w * 0.5, screen->h * 0.5, 50), 50);
+    const sphere light(Vec3f(0, 0, 50), 1);
 
     // Image
     const auto aspect_ratio = 16.0 / 9.0;
