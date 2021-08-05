@@ -1,0 +1,132 @@
+﻿  raytracer.cpp
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(5,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(5,24): error C2143: syntax error: missing ',' before '&'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(8,15): error C3646: 'origin': unknown override specifier
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(8,21): error C2059: syntax error: '('
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(8,30): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(9,13): error C3646: 'direction': unknown override specifier
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(9,22): error C2059: syntax error: '('
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(9,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(11,15): error C3646: 'at': unknown override specifier
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(11,17): error C2059: syntax error: '('
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(11,34): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(16,13): error C3646: 'orig': unknown override specifier
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(16,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(17,11): error C3646: 'dir': unknown override specifier
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(17,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(5,65): error C2065: 'origin': undeclared identifier
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(5,78): error C2065: 'direction': undeclared identifier
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(5,60): error C2614: 'ray': illegal member initialization: 'orig' is not a base or member
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(5,74): error C2614: 'ray': illegal member initialization: 'dir' is not a base or member
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\hittable.h(12,19): error C2039: 'direction': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\sphere.h(20,15): error C2039: 'origin': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\sphere.h(21,13): error C2039: 'direction': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\sphere.h(22,32): error C2039: 'direction': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\sphere.h(24,29): error C3536: 'half_b': cannot be used before it is initialized
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\sphere.h(24,42): error C3536: 'a': cannot be used before it is initialized
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\sphere.h(36,12): error C2039: 'at': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\sphere.h(37,44): warning C4244: 'argument': conversion from 'const double' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(14,1): warning C4005: 'M_PI': macro redefinition
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\SDL2-2.0.12\include\SDL_stdinc.h(508): message : see previous definition of 'M_PI'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(73,18): error C2039: 'origin': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(74,16): error C2039: 'direction': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(74,41): error C2039: 'direction': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(75,36): error C2039: 'direction': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(77,27): error C3536: 'b': cannot be used before it is initialized
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(77,39): error C3536: 'a': cannot be used before it is initialized
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(91,30): error C2039: 'direction': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(93,17): warning C4244: 'argument': conversion from 'double' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(93,72): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(93,48): warning C4244: 'argument': conversion from 'double' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(100,64): warning C4244: 'argument': conversion from 'const double' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(104,31): error C2039: 'orig': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(105,29): error C2039: 'dir': is not a member of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\ray.h(3): message : see declaration of 'ray'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(135,58): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(135,41): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(149,29): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(150,30): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(151,83): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(159,15): error C2672: 'make_shared': no matching overloaded function found
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(159,57): error C2974: 'std::make_shared': invalid template argument for '_Ty', type expected
+C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.30.30401\include\memory(2771): message : see declaration of 'std::make_shared'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(160,15): error C2672: 'make_shared': no matching overloaded function found
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(160,62): error C2974: 'std::make_shared': invalid template argument for '_Ty', type expected
+C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.30.30401\include\memory(2771): message : see declaration of 'std::make_shared'
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(177,53): warning C4244: 'argument': conversion from 'double' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(177,70): warning C4244: 'argument': conversion from 'double' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(177,91): error C2661: 'ray::ray': no overloaded function takes 2 arguments
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(179,89): warning C4244: 'argument': conversion from 'T' to 'Uint8', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(179,78): warning C4244: 'argument': conversion from 'T' to 'Uint8', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\tayzi\Downloads\Ray-Tracer-Starter-main\Ray-Tracer-Starter-main\raytracer.cpp(179,67): warning C4244: 'argument': conversion from 'T' to 'Uint8', possible loss of data
+          with
+          [
+              T=float
+          ]
