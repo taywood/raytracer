@@ -84,13 +84,13 @@ double hit_sphere(const Point3f& centre, double radius, const ray& r) {
     }
 }
 
-Colour ray_colour(const ray& r, const hittable& world) {
+Colour ray_colour(const ray& r, const hittable& world, int depth) {
     hit_record rec;
-    if (world.hit(r, 0, infinity, rec)) { // bounded t from 0 -> inf
+    if (depth <= 0) return Colour(0, 0, 0);
+    if (world.hit(r, 0, infinity, rec)) {
         Point3f target = rec.p + rec.normal + Vec3f().random_in_unit_sphere();
-        //next line for normal visualisation debugging only
         //return (rec.normal + Colour(1, 1, 1)) * 255 * 0.5;
-        return 0.5 * ray_colour(ray(rec.p, target - rec.p), world);
+        return 0.5 * ray_colour(ray(rec.p, target - rec.p), world, depth - 1);
     }
     Vec3f unit_direction = r.direction().normalize();
     auto t = 0.5 * (unit_direction.y + 1.0);
@@ -145,6 +145,7 @@ int main(int argc, char **argv)
     const int image_height = static_cast<int>(image_width / aspect_ratio);
     int spp = 10;
     const float scale = 1.f / spp;
+    const int max_depth = 50;
 
     // Camera
     camera cam;
@@ -184,9 +185,14 @@ int main(int argc, char **argv)
                     auto u = double(x + random_double()) / (image_width - 1);
                     auto v = double(y + random_double()) / (image_height - 1);
                     ray ray = cam.get_ray(u, v);
-                    pix_col = pix_col + ray_colour(ray, world);
+                    pix_col = pix_col + ray_colour(ray, world, max_depth);
+                    pix_col /= 255.f * spp;
+                    pix_col.x = sqrt(pix_col.x );
+                    pix_col.y = sqrt(pix_col.y );
+                    pix_col.z = sqrt(pix_col.z );
+                    pix_col *= 255;
                 }
-                Uint32 colour = SDL_MapRGB(screen->format, pix_col.x * scale, pix_col.y * scale, pix_col.z * scale);
+                Uint32 colour = SDL_MapRGB(screen->format, pix_col.x, pix_col.y, pix_col.z);
                 putpixel(screen, x, y, colour);
             }
         }
