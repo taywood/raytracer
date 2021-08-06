@@ -10,8 +10,9 @@
 #include "sphere.h"
 #include "ray.h"
 #include "raytracer.h"
+#include "camera.h"
 
-#define M_PI 3.14159265359
+#define M_PI 3.14159265359;
 
 SDL_Window* window;
 SDL_Renderer* renderer;
@@ -85,8 +86,11 @@ double hit_sphere(const Point3f& centre, double radius, const ray& r) {
 
 Colour ray_colour(const ray& r, const hittable& world) {
     hit_record rec;
-    if (world.hit(r, 0, infinity, rec)) {
-        return (rec.normal + Colour(1, 1, 1)) * 255 * 0.5;
+    if (world.hit(r, 0, infinity, rec)) { // bounded t from 0 -> inf
+        Point3f target = rec.p + rec.normal + Vec3f().random_in_unit_sphere();
+        //next line for normal visualisation debugging only
+        //return (rec.normal + Colour(1, 1, 1)) * 255 * 0.5;
+        return 0.5 * ray_colour(ray(rec.p, target - rec.p), world);
     }
     Vec3f unit_direction = r.direction().normalize();
     auto t = 0.5 * (unit_direction.y + 1.0);
@@ -132,23 +136,26 @@ int main(int argc, char **argv)
     const Colour black(0, 0, 0);
     const Colour red(255, 0, 0);
 
-    const sphere sph(Vec3f(screen->w * 0.5, screen->h * 0.5, 50), 50);
-    const sphere light(Vec3f(0, 0, 50), 1);
+    const Sphere sph(Vec3f(screen->w * 0.5, screen->h * 0.5, 50), 50);
+    const Sphere light(Vec3f(0, 0, 50), 1);
 
     // Image
     const auto aspect_ratio = 16.0 / 9.0;
     const int image_width = screen->w;
     const int image_height = static_cast<int>(image_width / aspect_ratio);
+    int spp = 10;
+    const float scale = 1.f / spp;
 
     // Camera
+    camera cam;
 
-    auto viewport_height = 2.0;
-    auto viewport_width = aspect_ratio * viewport_height;
-    auto focal_length = 1.0;
-    auto origin = Point3f(0, 0, 0);
-    auto horizontal = Vec3f(viewport_width, 0, 0);
-    auto vertical = Vec3f(0, viewport_height, 0);
-    auto lower_left_corner = origin - horizontal / 2 - vertical / 2 - Vec3f(0, 0, focal_length);
+//    auto viewport_height = 2.0;
+//    auto viewport_width = aspect_ratio * viewport_height;
+//    auto focal_length = 1.0;
+//    auto origin = Point3f(0, 0, 0);
+//    auto horizontal = Vec3f(viewport_width, 0, 0);
+//    auto vertical = Vec3f(0, viewport_height, 0);
+//    auto lower_left_corner = origin - horizontal / 2 - vertical / 2 - Vec3f(0, 0, focal_length);
 
     double t;
     Colour pix_col(black);
@@ -172,11 +179,14 @@ int main(int argc, char **argv)
         for (int y = screen->h - 1; y >= 0; --y) {
             std::cerr << "/rScanlines remaining: " << y << std::flush;
             for (int x = 0; x < screen->w; ++x) {
-                auto u = double(x) / (image_width - 1);
-                auto v = double(y) / (image_height - 1);
-                ray ray(origin, lower_left_corner + u * horizontal + v * vertical - origin);
-                Colour pix_col = ray_colour(ray, world);
-                Uint32 colour = SDL_MapRGB(screen->format, pix_col.x, pix_col.y, pix_col.z);
+                pix_col = black;
+                for (int s = 0; s < spp; s++) {
+                    auto u = double(x + random_double()) / (image_width - 1);
+                    auto v = double(y + random_double()) / (image_height - 1);
+                    ray ray = cam.get_ray(u, v);
+                    pix_col = pix_col + ray_colour(ray, world);
+                }
+                Uint32 colour = SDL_MapRGB(screen->format, pix_col.x * scale, pix_col.y * scale, pix_col.z * scale);
                 putpixel(screen, x, y, colour);
             }
         }

@@ -1,4 +1,5 @@
 #pragma once
+#include "geometry.h"
 
 class ray {
 public:ray() {}

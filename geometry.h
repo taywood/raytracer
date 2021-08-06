@@ -50,6 +50,13 @@ typedef Vec2<int> Vec2i;
 // Vec3 is a standard/common way of naming vectors, points, etc. The OpenEXR and Autodesk libraries
 // use this convention for instance.
 
+inline double rand_double() {
+    return rand() / (RAND_MAX + 1.0);
+}
+inline double rand_double(double min, double max) {
+    return min + (max - min) * rand_double();
+}
+
 template<typename T>
 class Vec3
 {
@@ -83,6 +90,20 @@ public:
     { return x * x + y * y + z * z; }
     T length() const
     { return sqrt(norm()); }
+    inline static Vec3 random() {
+        return Vec3(rand_double(), rand_double(), rand_double());
+    }
+    inline static Vec3 random(double min, double max) {
+        return Vec3(rand_double(min, max), rand_double(min, max), rand_double(min, max));
+     }
+    Vec3 random_in_unit_sphere() {
+        while (true) {
+            auto p = Vec3::random(-1, 1);
+            if (p.norm() >= 1) continue;
+            return p;
+        }
+    }
+
     // The next two operators are sometimes called access operators or
     // accessors. The Vec coordinates can be accessed that way v[0], v[1], v[2],
     // rather than using the more traditional form v.x, v.y, v.z. This useful
@@ -112,7 +133,10 @@ public:
     }
     
     T x, y, z;
-};
+
+ };
+
+
 
 // Now you can specialize the class. We are just showing two examples here. In your code
 // you can declare a vector either that way: Vec3<float> a, or that way: Vec3f a
@@ -492,5 +516,5 @@ int main(int argc, char **argv)
     std::cerr << d << std::endl;
 
     return 0;
-}
+};
 #endif
