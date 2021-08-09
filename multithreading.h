@@ -5,6 +5,8 @@
 #include <vector>
 #include <thread>
 #include <queue>
+#include "ray.h"
+#include "raytracer.h"
 
 class ThreadPool {
 public:
@@ -70,8 +72,6 @@ private:
 	}
 };
 
-// * Source from Ryan Westwood ends here * //
-
 void LineRender(SDL_Surface* screen, hittable_list world, int y, int spp, int max_depth, camera* cam) {
 	const float aspect_ratio = 16.0 / 9;
 	const int image_width = screen->w;
@@ -97,3 +97,5 @@ void LineRender(SDL_Surface* screen, hittable_list world, int y, int spp, int ma
 		putpixel(screen, x, y, colour);
 	}
 }
+
+// * Source from Ryan Westwood ends here * //
