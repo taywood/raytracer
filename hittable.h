@@ -2,11 +2,14 @@
 #include "ray.h"
 #include "geometry.h"
 
+class material;
+
 struct hit_record {
 	Point3f p;
 	Vec3f normal;
 	double t;
 	bool front_face;
+	shared_ptr<material> mat_ptr;
 
 	inline void set_face_normal(const ray& r, const Vec3f& outward_normal) {
 		front_face = (r.direction().dotProduct(outward_normal)) < 0;

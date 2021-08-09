@@ -61,6 +61,10 @@ template<typename T>
 class Vec3
 {
 public:
+    bool near_zero() const {
+        const auto s = 1e-8;
+        return (x < s) && (y < s) && (z < s);
+        }
     Vec3() : x(T(0)), y(T(0)), z(T(0)) {}
     Vec3(T xx) : x(xx), y(xx), z(xx) {}
     Vec3(T xx, T yy, T zz) : x(xx), y(yy), z(zz) {}
@@ -103,6 +107,14 @@ public:
             return p;
         }
     }
+    Vec3 random_in_unit_disk() {
+        while (true) {
+            auto p = Vec3(rand_double(-1, 1), rand_double(-1, 1), 0);
+            if (p.norm() >= 1) continue;
+            return p;
+        }
+    }
+
 
     // The next two operators are sometimes called access operators or
     // accessors. The Vec coordinates can be accessed that way v[0], v[1], v[2],
