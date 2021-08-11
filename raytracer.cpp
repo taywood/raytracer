@@ -299,6 +299,7 @@ int main(int argc, char** argv)
                     pix_col.y = sqrt(pix_col.y );
                     pix_col.z = sqrt(pix_col.z );
                     pix_col *= 255;
+
                 }
                 Uint32 colour = SDL_MapRGB(screen->format, pix_col.x, pix_col.y, pix_col.z);
                 putpixel(screen, x, y, colour);
