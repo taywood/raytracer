@@ -31,7 +31,7 @@ public:
 		Vec3f offset = u * rd.x + v * rd.y;
 		return ray(
 			origin + offset,
-			lower_left_corner + s * horizontal + t * vertical = origin - offset);
+			lower_left_corner + s * horizontal + t * vertical - origin - offset);
 	}
 
 private:
